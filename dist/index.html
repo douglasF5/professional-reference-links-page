@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Douglas Ferreira">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- <link rel="shortcut icon" type="image/png" href="./assets/favicon.png"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="module" defer src="modules/main.js"></script>
+    <title>My links</title>
+</head>
+<body>
+    <div class="body-wrapper">
+        <main class="content">
+            <section class="primary-section">
+                <div class="primary-section__name-wrapper">
+                    <img src="/assets/logo.svg" alt="">
+                    <h1 class="primary-section__name">Douglas Ferreira</h1>
+                </div>
+                <h2 class="primary-section__statement">Jr. Front-end developer, UI designer, and other 99 things more I've been uncovering.</h2>
+            </section>
+            <section class="secondary-section">
+                <div class="secondary-section__title-wrapper">
+                    <h3 class="secondary-section__title">Find out more</h3>
+                    <span class="secondary-section__work-status">· Open to work</span>
+                </div>
+                <div class="actions-list">
+                    <button id="copyEmailButton" class="action-link">
+                        <svg class="action-link__under-icon copy-icon"><use xlink:href="../assets/icons.svg#copy-icon" /></svg>
+                        <div class="action-link__button">
+                            <svg class="action-link__top-icon copy-icon"><use xlink:href="../assets/icons.svg#copy-icon" /></svg>
+                            <div class="action-link__content">
+                                <p class="action-link__primary-content">dfaferreira46@gmail.com</p>
+                                <span id="cardCopyDetails" class="action-link__secondary-content">Get in touch · Click to copy</span>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <details  class="footer__language-selector">
+                <summary class="footer__language-switcher">
+                    English
+                    <svg class="footer__language-switcher-icon"><use xlink:href="../assets/icons.svg#chevron-down-icon" /></svg>
+                </summary>
+                <ul class="footer__languages-list">
+                    <li class="footer__language-wrapper">
+                        <span class="footer__language">
+                            English
+                            <svg class="footer__language-check-icon"><use xlink:href="../assets/icons.svg#check-icon" /></svg>
+                        </span>
+                    </li>
+                    <li class="footer__language-wrapper">
+                        <span class="footer__language">
+                            Português
+                        </span>
+                        <span class="footer__language-detail">Brazilian Portuguese</span>
+                    </li>
+                </ul>
+            </details>
+            <span class="footer__copyright">© 2009-2021</span>
+        </footer>
+    </div>
+</body>
+</html>
