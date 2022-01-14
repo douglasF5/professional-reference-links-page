@@ -1,0 +1,30 @@
+@import 'reset', 'typography', 'colors';
+
+:root {
+    // SETTING UP FONT SIZE
+    font-size: 62.5%; 
+
+    // SETTING UP COLOR CUSTOM PROPERTIES
+    @each $color, $value in $colors {
+        --c-#{$color}: #{$value};
+    }
+}
+
+body {
+    background-color: var(--c-surface-primary);
+    color: var(--c-on-surface-primary);
+    font-family: $font-face;
+}
+
+.body-wrapper {
+    height: 100vh;
+    max-width: 112.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8vw 4.8rem 4.8rem 4.8rem;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+@import 'primary-section', 'secondary-section', 'footer';
