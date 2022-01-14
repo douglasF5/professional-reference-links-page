@@ -1,0 +1,34 @@
+@import 'typography', 'breakpoints';
+
+.primary-section {
+    margin-bottom: 7.2rem;
+
+    &__name-wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.2rem;
+    
+        *:first-child {
+            margin-right: 0.8rem;
+        }
+    }
+    
+    &__name {
+        @include t-base("L", "medium", "one-liner");
+        color: var(--c-on-surface-secondary);
+        display: inline;
+
+        @include break-point(510) {
+            @include t-base("M", "medium", "one-liner");
+        }
+    }
+    
+    &__statement {
+        @include t-display("L");
+        display: inline;
+        
+        @include break-point(510) {
+            @include t-display("S");
+        }
+    }
+}

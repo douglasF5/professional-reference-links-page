@@ -1,0 +1,108 @@
+@import 'typography', 'breakpoints';
+
+.footer {
+    display: flex;
+    align-items: center;
+
+    @include break-point(510) {
+        justify-content: space-between;
+    }
+
+    &__language-selector {
+        position: relative;
+        margin-right: 0.8rem;
+    }
+
+    &__language-switcher {
+        @include t-base("S", "regular", "one-liner");
+        padding: 0.6rem 0.8rem;
+        background-color: transparent;
+        border-radius: 0.8rem;
+        color: var(--c-on-surface-secondary);
+        cursor: pointer;
+        transition: all 100ms ease-in;
+    }
+
+    &__language-switcher:hover {
+        color: var(--c-on-surface-primary);
+        background-color: var(--c-over-surface-secondary);
+    }
+
+    &__language-switcher {
+        list-style: none;
+    }
+
+    &__language-switcher-icon {
+        width: 0.8rem;
+        height: 0.8rem;
+        fill: var(--c-on-surface-secondary);
+    }
+
+    &__language-selector[open] > summary > &__language-switcher-icon {
+        transform: rotate(180deg);
+    }
+
+    &__languages-list {
+        position: absolute;
+        top: -400%;
+        padding: 0.8rem;
+        min-width: 18.1rem;
+        background-color: var(--c-surface-tertiary);
+        border-radius: 0.8rem;
+        list-style: none;
+        animation-name: fadeIn;
+        animation-duration: 100ms;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+    }
+
+    @keyframes fadeIn {
+        from{
+            transform: translateY(10%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 100%;
+        }
+    }
+
+    &__language-wrapper {
+        padding: 0.6rem 0.8rem;
+        background-color: var(--c-surface-tertiary);
+        border-radius: 0.8rem;
+        transition: background-color 100ms ease-in;
+    }
+    
+    &__language-wrapper:hover {
+        background-color: var(--c-over-surface-secondary);
+        cursor: pointer;
+    }
+
+    &__language {
+        @include t-base("S", "medium");
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--c-on-surface-primary);
+    }
+
+
+    &__language-check-icon {
+        width: 1.2rem;
+        height: 1.2rem;
+        fill: var(--c-accent);
+    }
+
+    &__language-detail {
+        @include t-mini;
+        display: inline-block;
+        margin-top: 0.4rem;
+        color:var(--c-on-surface-secondary);
+    }
+
+    &__copyright {
+        @include t-mini;
+        color: var(--c-on-surface-secondary);
+    }
+}

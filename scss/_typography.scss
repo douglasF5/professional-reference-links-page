@@ -1,0 +1,44 @@
+$font-face: 'Inter', sans-serif;
+
+$font-weights: (
+    "regular": 400,
+    "medium": 500,
+    "semibold": 600,
+);
+
+$display-sizes: (
+    "L": 4rem,
+    "S": 2.8rem,
+);
+
+$base-sizes: (
+    "L": 1.8rem,
+    "M": 1.6rem,
+    "S": 1.4rem,
+);
+
+@function getLineHeight($flag) {
+    @if $flag == "one-liner" {
+        @return 100%;
+    } @else {
+        @return $flag;
+    }
+}
+
+@mixin t-display($size) {
+    font-size: map-get($display-sizes, $size);
+    font-weight: 500;
+    line-height: 145%;
+}
+
+@mixin t-base($size, $weight, $height: 145%) {
+    font-size: map-get($base-sizes, $size);
+    font-weight: map-get($font-weights, $weight);
+    line-height: getLineHeight($height);
+}
+
+@mixin t-mini {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 100%;
+}
