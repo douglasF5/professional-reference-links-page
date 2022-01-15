@@ -4,10 +4,11 @@
     position: relative;
     height: 13.7rem;
     min-width: 24rem;
-    border: solid 1px var(--c-outline);
+    border: none;
     border-radius: 0.8rem;
-    background-color: var(--c-accent);
+    background-color: var(--c-surface-primary);
     overflow: hidden;
+    transition: background-color 150ms ease-in;
 
     &__button {
         position: absolute;
@@ -22,17 +23,30 @@
         padding: 1.6rem;
         border: none;
         border-radius: 0;
+        text-decoration: none;
         background-color: var(--c-surface-secondary);
         transition: background-color 150ms ease-in, transform 150ms ease-in-out;
     }
 
     &:hover {
         cursor: pointer;
+        background-color: var(--c-accent, $accentDefault);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        box-shadow: inset 0px 0px 0px 1px var(--c-outline);
+        border-radius: 0.8rem;
     }
 
     &:hover > &__button {
         transform: translateY(-4rem);
-        border-radius: 0 0 0.8rem 0.8rem;
+        border-radius: 0.8rem;
         background-color: var(--c-surface-tertiary);
         cursor: pointer;
     }
@@ -43,7 +57,7 @@
 
     &__top-icon {
         margin-bottom: 1.6rem;
-        fill: var(--c-accent);
+        fill: var(--c-accent, $accentDefault);
     }
 
     &__top-icon.arrow-icon {
@@ -114,9 +128,14 @@
         @include t-base("S", "regular", "one-liner");
         color: var(--c-on-surface-secondary);
         text-align: left;
+        transition: color 150ms ease-in;
+    }
+
+    &:hover &__secondary-content {
+        color: var(--c-accent, $accentDefault);
     }
 
     &__secondary-content[data-highlight] {
-        color: var(--c-accent);
+        color: var(--c-accent, $accentDefault);
     }
 }

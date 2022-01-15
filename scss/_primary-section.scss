@@ -1,4 +1,4 @@
-@import 'typography', 'breakpoints';
+@import 'typography', 'breakpoints', 'colors';
 
 .primary-section {
     margin-bottom: 7.2rem;
@@ -17,10 +17,16 @@
         @include t-base("L", "medium", "one-liner");
         color: var(--c-on-surface-secondary);
         display: inline;
+        margin-right: 0.6rem;
 
         @include break-point(510) {
             @include t-base("M", "medium", "one-liner");
         }
+    }
+
+    &__work-status {
+        @include t-base("M", "regular", "one-liner");
+        color: var(--c-accent, $accentDefault);
     }
     
     &__statement {

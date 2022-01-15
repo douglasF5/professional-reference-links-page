@@ -1,4 +1,4 @@
-@import 'typography', 'breakpoints';
+@import 'typography', 'breakpoints', 'colors';
 
 .secondary-section {
     margin-bottom: 2.4rem;
@@ -12,11 +12,6 @@
     &__title {
         @include t-base("M", "medium", "one-liner");
         margin-right: 0.4rem;
-    }
-    
-    &__work-status {
-        @include t-base("S", "regular", "one-liner");
-        color: var(--c-positive);
     }
 }
 

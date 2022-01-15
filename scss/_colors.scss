@@ -1,6 +1,5 @@
 
 $colors:(
-    "accent": #5ACDFA,
     "on-accent": #000000,
     "positive": #3CE18E,
     "surface-primary": #000000,
@@ -13,3 +12,5 @@ $colors:(
     "modal-overlay": rgba(0, 0, 0, 0.7),
     "outline": #292929,
 );
+
+$accentDefault: #5ACDFA;
