@@ -90,7 +90,6 @@ input::-webkit-inner-spin-button {
 
 :root {
   font-size: 62.5%;
-  --c-accent: #5ACDFA;
   --c-on-accent: #000000;
   --c-positive: #3CE18E;
   --c-surface-primary: #000000;
@@ -152,6 +151,7 @@ body {
   line-height: 100%;
   color: var(--c-on-surface-secondary);
   display: inline;
+  margin-right: 0.6rem;
 }
 
 @media screen and (max-width: 510px) {
@@ -160,6 +160,13 @@ body {
     font-weight: 500;
     line-height: 100%;
   }
+}
+
+.primary-section__work-status {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--c-accent, #5ACDFA);
 }
 
 .primary-section__statement {
@@ -198,13 +205,6 @@ body {
   margin-right: 0.4rem;
 }
 
-.secondary-section__work-status {
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 100%;
-  color: var(--c-positive);
-}
-
 .actions-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -219,10 +219,12 @@ body {
   position: relative;
   height: 13.7rem;
   min-width: 24rem;
-  border: solid 1px var(--c-outline);
+  border: none;
   border-radius: 0.8rem;
-  background-color: var(--c-accent);
+  background-color: var(--c-surface-primary);
   overflow: hidden;
+  -webkit-transition: background-color 150ms ease-in;
+  transition: background-color 150ms ease-in;
 }
 
 .action-link__button {
@@ -247,6 +249,7 @@ body {
   padding: 1.6rem;
   border: none;
   border-radius: 0;
+  text-decoration: none;
   background-color: var(--c-surface-secondary);
   -webkit-transition: background-color 150ms ease-in, -webkit-transform 150ms ease-in-out;
   transition: background-color 150ms ease-in, -webkit-transform 150ms ease-in-out;
@@ -256,12 +259,25 @@ body {
 
 .action-link:hover {
   cursor: pointer;
+  background-color: var(--c-accent, #5ACDFA);
+}
+
+.action-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-box-shadow: inset 0px 0px 0px 1px var(--c-outline);
+          box-shadow: inset 0px 0px 0px 1px var(--c-outline);
+  border-radius: 0.8rem;
 }
 
 .action-link:hover > .action-link__button {
   -webkit-transform: translateY(-4rem);
           transform: translateY(-4rem);
-  border-radius: 0 0 0.8rem 0.8rem;
+  border-radius: 0.8rem;
   background-color: var(--c-surface-tertiary);
   cursor: pointer;
 }
@@ -273,7 +289,7 @@ body {
 
 .action-link__top-icon {
   margin-bottom: 1.6rem;
-  fill: var(--c-accent);
+  fill: var(--c-accent, #5ACDFA);
 }
 
 .action-link__top-icon.arrow-icon {
@@ -363,10 +379,16 @@ body {
   line-height: 100%;
   color: var(--c-on-surface-secondary);
   text-align: left;
+  -webkit-transition: color 150ms ease-in;
+  transition: color 150ms ease-in;
+}
+
+.action-link:hover .action-link__secondary-content {
+  color: var(--c-accent, #5ACDFA);
 }
 
 .action-link__secondary-content[data-highlight] {
-  color: var(--c-accent);
+  color: var(--c-accent, #5ACDFA);
 }
 
 .footer {
@@ -398,14 +420,13 @@ body {
   padding: 0.6rem 0.8rem;
   background-color: transparent;
   border-radius: 0.8rem;
-  color: var(--c-on-surface-secondary);
+  color: var(--c-accent, #5ACDFA);
   cursor: pointer;
   -webkit-transition: all 100ms ease-in;
   transition: all 100ms ease-in;
 }
 
 .footer__language-switcher:hover {
-  color: var(--c-on-surface-primary);
   background-color: var(--c-over-surface-secondary);
 }
 
@@ -416,7 +437,8 @@ body {
 .footer__language-switcher-icon {
   width: 0.8rem;
   height: 0.8rem;
-  fill: var(--c-on-surface-secondary);
+  margin-left: 0.2rem;
+  fill: var(--c-accent, #5ACDFA);
 }
 
 .footer__language-selector[open] > summary > .footer__language-switcher-icon {
@@ -500,7 +522,7 @@ body {
 .footer__language-check-icon {
   width: 1.2rem;
   height: 1.2rem;
-  fill: var(--c-accent);
+  fill: var(--c-accent, #5ACDFA);
 }
 
 .footer__language-detail {
