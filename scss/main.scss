@@ -2,6 +2,9 @@
 @use 'typography' as text;
 @use 'colors';
 @use 'breakpoints' as brkp;
+@use 'primary-section';
+@use 'secondary-section';
+@use 'footer';
 
 :root {
     // SETTING UP FONT SIZE
@@ -20,28 +23,15 @@ body {
 }
 
 .body-wrapper {
-    height: 100vh;
+    min-height: 100vh;
     max-width: 112.8rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: Min(12vw, 12vh) 5.6rem 4.8rem 5.6rem;
+    padding: Min(14vw, 14vh) 5.6rem 4.8rem 5.6rem;
     margin: 0 auto;
-    overflow: hidden;
 
     @include brkp.break-point(510) {
-        justify-content: flex-start;
-        padding: Min(12vw, 12vh) 3.2rem 4.8rem 3.2rem;
+        padding: Min(12vw, 12vh) 3.2rem 3.2rem 3.2rem;
     }
 }
-
-.content {
-    @include brkp.break-point(510) {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-}
-
-@import 'primary-section', 'secondary-section', 'footer';

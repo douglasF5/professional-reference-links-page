@@ -1,10 +1,12 @@
-@import 'typography', 'breakpoints', 'colors';
+@use 'typography' as text;
+@use 'breakpoints' as brkp;
+@use 'colors';
 
 .footer {
     display: flex;
     align-items: center;
 
-    @include break-point(510) {
+    @include brkp.break-point(510) {
         justify-content: space-between;
     }
 
@@ -14,11 +16,11 @@
     }
 
     &__language-switcher {
-        @include t-base("S", "regular", "one-liner");
+        @include text.t-base("S", "regular", "one-liner");
         padding: 0.6rem 0.8rem;
         background-color: transparent;
         border-radius: 0.8rem;
-        color: var(--c-accent, $accentDefault);
+        color: var(--c-accent, colors.$accentDefault);
         cursor: pointer;
         transition: all 100ms ease-in;
         list-style: none;
@@ -32,7 +34,7 @@
         width: 0.8rem;
         height: 0.8rem;
         margin-left: 0.6rem;
-        fill: var(--c-accent, $accentDefault);
+        fill: var(--c-accent, colors.$accentDefault);
     }
 
     &__language-selector[open] > summary > &__language-switcher-icon {
@@ -77,7 +79,7 @@
     }
 
     &__language {
-        @include t-base("S", "medium");
+        @include text.t-base("S", "medium");
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -88,18 +90,18 @@
     &__language-check-icon {
         width: 1.2rem;
         height: 1.2rem;
-        fill: var(--c-accent, $accentDefault);
+        fill: var(--c-accent, colors.$accentDefault);
     }
 
     &__language-detail {
-        @include t-mini;
+        @include text.t-mini;
         display: inline-block;
         margin-top: 0.4rem;
         color:var(--c-on-surface-secondary);
     }
 
     &__copyright {
-        @include t-mini;
+        @include text.t-mini;
         color: var(--c-on-surface-secondary);
     }
 }

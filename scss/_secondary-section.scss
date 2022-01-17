@@ -1,4 +1,6 @@
-@import 'typography', 'breakpoints', 'colors';
+@forward 'action-items';
+@use 'typography' as text;
+@use 'breakpoints' as brkp;
 
 .secondary-section {
     margin-bottom: 2.4rem;
@@ -10,18 +12,18 @@
     }
     
     &__title {
-        @include t-base("M", "medium", "one-liner");
+        @include text.t-base("M", "medium", "one-liner");
         margin-right: 0.4rem;
     }
 }
 
 .actions-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(24.2rem, 1fr));
     gap: 1.6rem;
     list-style: none;
     flex-wrap: wrap;
-    overflow-x: visible;
-}
 
-@import 'action-items';
+    @include brkp.break-point(510) {
+    }
+}

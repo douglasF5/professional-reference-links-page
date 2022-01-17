@@ -1,15 +1,20 @@
 @use 'typography' as text;
 @use 'colors';
+@use 'breakpoints' as brkp;
 
 .action-link {
     position: relative;
-    height: 13.7rem;
+    min-height: 13.7rem;
     min-width: 24rem;
     border: none;
     border-radius: 0.8rem;
     background-color: var(--c-surface-primary);
     overflow: hidden;
     transition: background-color 150ms ease-in;
+
+    @include brkp.break-point(611) {
+        min-height: 8rem;
+    }
 
     &__button {
         position: absolute;
@@ -27,6 +32,11 @@
         text-decoration: none;
         background-color: var(--c-surface-secondary);
         transition: background-color 150ms ease-in, transform 150ms ease-in-out;
+
+        @include brkp.break-point(611) {
+            flex-direction: row-reverse;
+            align-items: flex-start;
+        }
     }
 
     &:hover {
@@ -58,7 +68,7 @@
 
     &__top-icon {
         margin-bottom: 1.6rem;
-        fill: var(--c-accent, $accentDefault);
+        fill: var(--c-accent, colors.$accentDefault);
     }
 
     &__top-icon.arrow-icon {
@@ -133,10 +143,10 @@
     }
 
     &:hover &__secondary-content {
-        color: var(--c-accent, $accentDefault);
+        color: var(--c-accent, colors.$accentDefault);
     }
 
     &__secondary-content[data-highlight] {
-        color: var(--c-accent, $accentDefault);
+        color: var(--c-accent, colors.$accentDefault);
     }
 }

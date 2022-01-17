@@ -1,7 +1,13 @@
-@import 'typography', 'breakpoints', 'colors';
+@use 'typography' as text;
+@use 'breakpoints' as brkp;
+@use 'colors';
 
 .primary-section {
     margin-bottom: 7.2rem;
+
+    @include brkp.break-point(510) {
+        margin-bottom: 4.8rem;
+    }
 
     &__name-wrapper {
         display: flex;
@@ -14,31 +20,31 @@
     }
     
     &__name {
-        @include t-base("L", "medium", "one-liner");
+        @include text.t-base("L", "medium", "one-liner");
         color: var(--c-on-surface-secondary);
         display: inline;
         margin-right: 0.6rem;
 
-        @include break-point(510) {
-            @include t-base("S", "medium", "one-liner");
+        @include brkp.break-point(510) {
+            @include text.t-base("S", "medium", "one-liner");
         }
     }
 
     &__work-status {
-        @include t-base("M", "regular", "one-liner");
-        color: var(--c-accent, $accentDefault);
+        @include text.t-base("M", "regular", "one-liner");
+        color: var(--c-accent, colors.$accentDefault);
 
-        @include break-point(510) {
-            @include t-base("S", "regular", "one-liner");
+        @include brkp.break-point(510) {
+            @include text.t-base("S", "regular", "one-liner");
         }
     }
     
     &__statement {
-        @include t-display("L");
+        @include text.t-display("L");
         display: inline-block;
         
-        @include break-point(510) {
-            @include t-display("S");
+        @include brkp.break-point(510) {
+            @include text.t-display("S");
         }
     }
 }
