@@ -1,5 +1,20 @@
 // SET UP LANGUAGE
-let lang = 'pt';
+const getLang = () => {
+    return localStorage.getItem('lang') || 'en';
+};
+
+const lang = getLang();
+let currentLang = lang;
+
+const changeLang = (lang) => {
+    currentLang = lang;
+};
+
+const setLang = (lang) => {
+    return localStorage.setItem('lang', lang);
+};
+
+// CONTENT
 const content = {
     statement: {
         en: "Front end developer and UI designer — plus other 99 things more I've been uncovering.",
@@ -32,7 +47,7 @@ const content = {
 };
 
 const getContent = (element) => {
-    return content[element][lang];
+    return content[element][currentLang];
 }
 
-export { getContent };
+export { getContent, currentLang, changeLang, setLang };

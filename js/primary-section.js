@@ -1,4 +1,4 @@
-import { getContent } from './language.js';
+import { getContent } from './content.js';
 
 // SET UP WORK AVAILABILITY
 const workStatus = (workAvailability) => {

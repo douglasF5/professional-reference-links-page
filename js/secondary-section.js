@@ -1,21 +1,26 @@
-import { getContent } from './language.js';
+import { getContent } from './content.js';
 
 const actionsList = document.querySelector('.actions-list');
+
+// CLEAR CARDS
+const clearCards = () => {
+    actionsList.innerHTML = '';
+};
 
 // RENDER LINK CARDS
 const actionLinksInfo = [
     {
-        title: getContent('linkToLinkedIn'),
+        title: 'linkToLinkedIn',
         details: 'linkedin.com/douglasfs',
         url: 'https://www.linkedin.com/in/douglasfs/',
     },
     {
-        title: getContent('linkToGithub'),
+        title: 'linkToGithub',
         details: 'github.com/douglasf5',
         url: 'https://github.com/douglasF5?tab=repositories',
     },
     {
-        title: getContent('linkToDribbble'),
+        title: 'linkToDribbble',
         details: 'dribbble.com/douglas_',
         url: 'https://dribbble.com/douglas_',
     },
@@ -32,11 +37,11 @@ const renderLinkCard = (data) => {
 
 const linkCardInnerHTML = (data) => {
     const HTMLtemplate = `
-        <svg class="action-link__under-icon arrow-icon"><use xlink:href="../assets/icons.svg#arrow-icon" /></svg>
+        <svg class="action-link__under-icon arrow-icon"><use xlink:href="./assets/icons.svg#arrow-icon" /></svg>
         <button class="action-link__button">
-            <svg class="action-link__top-icon arrow-icon"><use xlink:href="../assets/icons.svg#arrow-icon" /></svg>
+            <svg class="action-link__top-icon arrow-icon"><use xlink:href="./assets/icons.svg#arrow-icon" /></svg>
             <div class="action-link__content">
-                <p class="action-link__primary-content">${data.title}</p>
+                <p class="action-link__primary-content">${getContent(data.title)}</p>
                 <span class="action-link__secondary-content">${data.details}</span>
             </div>
         </button>
@@ -62,9 +67,9 @@ const renderCopyCard = () => {
 
 const copyCardInnerHTML = () => {
     const HTMLtemplate = `
-        <svg class="action-link__under-icon copy-icon"><use xlink:href="../assets/icons.svg#copy-icon" /></svg>
+        <svg class="action-link__under-icon copy-icon"><use xlink:href="./assets/icons.svg#copy-icon" /></svg>
         <div class="action-link__button">
-            <svg class="action-link__top-icon copy-icon"><use xlink:href="../assets/icons.svg#copy-icon" /></svg>
+            <svg class="action-link__top-icon copy-icon"><use xlink:href="./assets/icons.svg#copy-icon" /></svg>
             <div class="action-link__content">
                 <p class="action-link__primary-content">dfaferreira46@gmail.com</p>
                 <span id="cardCopyDetails" class="action-link__secondary-content">${getContent('emailButton')}</span>
@@ -110,4 +115,4 @@ const setSecondarySection = () => {
     };
 };
 
-export { setSecondarySection };
+export { setSecondarySection, clearCards };
