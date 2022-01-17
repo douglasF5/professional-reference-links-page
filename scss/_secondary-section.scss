@@ -16,10 +16,12 @@
 }
 
 .actions-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.6rem;
     list-style: none;
     flex-wrap: wrap;
+    overflow-x: visible;
 }
 
 @import 'action-items';

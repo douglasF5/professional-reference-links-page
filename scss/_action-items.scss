@@ -1,4 +1,5 @@
-@import 'typography';
+@use 'typography' as text;
+@use 'colors';
 
 .action-link {
     position: relative;
@@ -30,7 +31,7 @@
 
     &:hover {
         cursor: pointer;
-        background-color: var(--c-accent, $accentDefault);
+        background-color: var(--c-accent, colors.$accentDefault);
     }
 
     &::after {
@@ -118,14 +119,14 @@
     }
 
     &__primary-content {
-        @include t-base("M", "medium");
+        @include text.t-base("M", "medium");
         margin-bottom: 0.8rem;
         color: var(--c-on-surface-primary);
         text-align: left;
     }
 
     &__secondary-content {
-        @include t-base("S", "regular", "one-liner");
+        @include text.t-base("S", "regular", "one-liner");
         color: var(--c-on-surface-secondary);
         text-align: left;
         transition: color 150ms ease-in;

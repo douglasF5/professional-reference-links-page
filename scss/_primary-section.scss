@@ -20,18 +20,22 @@
         margin-right: 0.6rem;
 
         @include break-point(510) {
-            @include t-base("M", "medium", "one-liner");
+            @include t-base("S", "medium", "one-liner");
         }
     }
 
     &__work-status {
         @include t-base("M", "regular", "one-liner");
         color: var(--c-accent, $accentDefault);
+
+        @include break-point(510) {
+            @include t-base("S", "regular", "one-liner");
+        }
     }
     
     &__statement {
         @include t-display("L");
-        display: inline;
+        display: inline-block;
         
         @include break-point(510) {
             @include t-display("S");

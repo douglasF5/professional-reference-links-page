@@ -21,20 +21,17 @@
         color: var(--c-accent, $accentDefault);
         cursor: pointer;
         transition: all 100ms ease-in;
+        list-style: none;
     }
 
     &__language-switcher:hover {
         background-color: var(--c-over-surface-secondary);
     }
 
-    &__language-switcher {
-        list-style: none;
-    }
-
     &__language-switcher-icon {
         width: 0.8rem;
         height: 0.8rem;
-        margin-left: 0.2rem;
+        margin-left: 0.6rem;
         fill: var(--c-accent, $accentDefault);
     }
 
@@ -42,7 +39,7 @@
         transform: rotate(180deg);
     }
 
-    &__languages-list {
+    &__languages-list[data-open] {
         position: absolute;
         top: -400%;
         padding: 0.8rem;

@@ -1,11 +1,14 @@
-@import 'reset', 'typography', 'colors';
+@use 'reset';
+@use 'typography' as text;
+@use 'colors';
+@use 'breakpoints' as brkp;
 
 :root {
     // SETTING UP FONT SIZE
     font-size: 62.5%; 
 
     // SETTING UP COLOR CUSTOM PROPERTIES
-    @each $color, $value in $colors {
+    @each $color, $value in colors.$colors {
         --c-#{$color}: #{$value};
     }
 }
@@ -13,7 +16,7 @@
 body {
     background-color: var(--c-surface-primary);
     color: var(--c-on-surface-primary);
-    font-family: $font-face;
+    font-family: text.$font-face;
 }
 
 .body-wrapper {
@@ -22,9 +25,23 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 8vw 4.8rem 4.8rem 4.8rem;
+    padding: Min(12vw, 12vh) 5.6rem 4.8rem 5.6rem;
     margin: 0 auto;
-    overflow: auto;
+    overflow: hidden;
+
+    @include brkp.break-point(510) {
+        justify-content: flex-start;
+        padding: Min(12vw, 12vh) 3.2rem 4.8rem 3.2rem;
+    }
+}
+
+.content {
+    @include brkp.break-point(510) {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
 
 @import 'primary-section', 'secondary-section', 'footer';
