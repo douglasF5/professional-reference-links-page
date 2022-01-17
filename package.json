@@ -1,0 +1,24 @@
+{
+  "name": "professional-reference-links-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch scss/main.scss:css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/douglasF5/professional-reference-links-page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/douglasF5/professional-reference-links-page/issues"
+  },
+  "homepage": "https://github.com/douglasF5/professional-reference-links-page#readme",
+  "devDependencies": {
+    "sass": "^1.48.0"
+  }
+}
