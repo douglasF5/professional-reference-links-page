@@ -1,6 +1,6 @@
 # Professional reference links page
 
-In this project, an interactive page was developed using HTML, CSS and JavaScript - for building the page and its functionality, - and the Web Storage API for storing transactions and user preferences data.
+In this project, aside from HTML, CSS and JavaScript, I used SASS for the first time to generate the final CSS used for styling a simple page that holds professional links and contact information. 
 
 ## Implemented features:
 
