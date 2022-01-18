@@ -1,6 +1,6 @@
 # Professional reference links page
 
-In this project, aside from HTML, CSS and JavaScript, I used SASS for the first time to generate the final CSS used for styling a simple page that holds professional links and contact information. 
+In this project, aside from **HTML** and **JavaScript**, I used **SASS** for the first time to generate the final **CSS** and style a simple page that holds professional links and contact information.
 
 ## Implemented features:
 
