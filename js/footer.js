@@ -9,6 +9,7 @@ const englishLang = document.getElementById('englishLang');
 const englishLangWrapper = document.getElementById('englishLang').closest('li');
 const portugueseLang = document.getElementById('portugueseLang');
 const portugueseLangWrapper = document.getElementById('portugueseLang').closest('li');
+const footerInfo = document.querySelector('.footer__copyright');
 
 // RENDER CHECK MARK FOR THE SELECTED LANGUAGE
 const renderCheck = (element) => {
@@ -70,6 +71,8 @@ const setFooter = () => {
     window.addEventListener('beforeunload', () => {
         setLang(currentLang);
     });
+
+    footerInfo.innerHTML = '© 2020 — ' + new Date().getFullYear();
 };
 
 export { setFooter };
