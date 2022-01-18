@@ -14,7 +14,7 @@ From desktop to mobile screens, a well-thought-out use of space.
 
 ### **UI micro interactions**
 
-When interacting with the card components you see a gourgeous look come out of their simplicity through smooth and nice little animations.
+When interacting with the card components you see a gorgeous look come out of their simplicity through smooth and nice little animations.
 
 <img src=".github/interactions.png">
 
