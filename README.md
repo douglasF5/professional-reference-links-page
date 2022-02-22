@@ -1,6 +1,6 @@
 # Professional reference links page
 
-In this project, aside from **HTML** and **JavaScript**, I used **SASS** for the first time to generate the final **CSS** and style a simple page that holds professional links and contact information.
+In this project, aside from **HTML** and **JavaScript**, I used **SASS** for the first time to generate the final **CSS** and style a simple page that holds professional links and contact information. [Interact with the live project here](https://douglasf5.github.io/professional-reference-links-page/).
 
 ## Implemented features:
 
@@ -43,3 +43,9 @@ Just for fun, every time the page is reloaded, a new accent color (one out of 6 
 <img src=".github/colors.png">
 
 <br>
+
+## Extra notes
+
+- As a beginner exercise, this project wasn’t focused on advanced optimizations regarding data storage, processing, accessibility, scalability, cross-browser compatibility, etc. There’s still a lot to be done about it.
+- The UI was design exclusively for this exercise.
+- As most projects, this one is not bug/error-free. If you find any bug or unexpected behavior, feel free to get in touch, here is my email - dfaferreira46@gmail.com
